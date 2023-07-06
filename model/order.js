@@ -1,11 +1,12 @@
 class Order {
     constructor (product, quantity, unitPrice){
         this.product = product;
-        this.quantity = parseInt(quantity);
-        this.unitPrice = parseInt(unitPrice);
+        this.quantity = quantity;
+        this.unitPrice = unitPrice;
     }
 
     totalPrice(){
-        return this.quantity * this.unitPrice;
+        let totalPrice = this.quantity * this.unitPrice;
+        return totalPrice;
     }
 }

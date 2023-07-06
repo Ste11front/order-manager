@@ -1,23 +1,26 @@
 class Employee extends Person{
-    constructor (name, surname, dob, sex, age, department, clients){
-        super (name, surname, dob, sex, age)
+    constructor(name, surname, dob, gender, age, department, clients){
+        super(name,surname, dob, gender, age);
         this.department = department;
-        this.clients = clients; //typeofClients
+        this.clients = clients;
     }
 
     toString(){
+        const card = super.toString() +
+                    'Dipartimento: ' + this.department + '\n' +  
+                    'Clienti: ' + this.clients + '\n';
+        return card;
+    }
+
+    bestClient() {
         
     }
 
-    bestClient(){
-
-    }
-
     totalEarnings(){
+        
+    } 
 
-    }
-
-    addClient(client){
+    addClient(){
         
     }
 }
