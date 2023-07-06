@@ -1,29 +1,53 @@
-const order1 = new Order('Giacca','3','30')
+const order1 = new Order('matite', 1.50, 20);
 
-const order2 = new Order('Pantalone', '4','25')
+console.log(order1);
 
-const order3 = new Order('Scarpe','2','15')
+console.log(order1.totalPrice);
 
-const order4 = new Order('Maglia','11','10')
+console.log(order1.toString());
 
-const order5 = new Order('Pallone', '10', '5')
+const person1 = new Person('Damiano', 'Di Lionardo', new Date(1993,4,29), 'male');
 
-const client1 = new Client('Aldo','Giovanni','17/16/1977','M','get','Daqualcheparte', [order1, order2, order3]);
-const client2 = new Client('Alex','Pavone','12/13/2000','F','get','Nellavia', [order4, order5]);
+console.log(person1);
 
+const dob = new Date(1978,2,2);
 
-client1.addOrder(order1)
-client1.addOrder(order2)
-client1.addOrder(order3)
+const person2 = new Person('Andrea', 'Asioli', dob, 'male');
 
+console.log(person2);
 
-client2.addOrder(order4)
-client2.addOrder(order5)
+const client1 = new Client('Manuela', 'Ariotti', new Date(1988,5,22), 'female', 'via Martini 56');
 
+console.log(client1);
 
-const employee = new Employee('luigi','mario','01/01/1988','m','get','salitafungosa', 'sport', [client1, client2]);
+const order2 = new Order('penne', 2.50, 100);
 
-employee.addClient(client1);
-employee.addClient(client2);
+const ordersArray = [order1, order2];
 
-console.log(employee.bestClient())
+const client2 = new Client('Cesare', 'Falzone', new Date(2003,2,4), 'male', 'via XX settembre 3', ordersArray);
+
+console.log(client2);
+
+const employee1 = new Employee('Ares', 'Fiumicelli', new Date(1993,4,25), 'male', 'cancelleria', [client1, client2]);
+
+console.log(employee1);
+
+// console.log(new Date().getTime());
+
+console.log(employee1.age);
+
+console.log(employee1.toString());
+
+console.log(client2.totalExpenses());
+
+console.log(client2.toString());
+
+console.log(employee1.totalEarnings());
+
+client1.addOrder(new Order('temperini', 3, 10));
+
+console.log(employee1.totalEarnings());
+
+console.log(employee1.bestClient());
+
+console.log(employee1.toString());

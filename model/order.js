@@ -1,12 +1,27 @@
 class Order {
-    constructor (product, quantity, unitPrice){
+    constructor(product, unitPrice, quantity) {
         this.product = product;
-        this.quantity = quantity;
         this.unitPrice = unitPrice;
+        this.quantity = quantity;
     }
 
-    totalPrice(){
-        let totalPrice = this.quantity * this.unitPrice;
-        return totalPrice;
+    getTotalPrice(){
+        return this.unitPrice * this.quantity;
     }
+
+    get totalPrice(){
+        return this.unitPrice * this.quantity;
+    }
+
+    toString(){                               // ` -> Alt 96(testiera numerica destra)    new Date(aaaa/mm/gg) -> Mese va segnato -1
+        const card = 
+        `Product: ${this.product}                       
+Prezzo Unitario: ${this.unitPrice.toFixed(2)} €
+Quantità: ${this.quantity}
+Prezzo Totale: ${this.totalPrice.toFixed(2)} €
+        `;
+        return card;
+    }
+
+
 }
