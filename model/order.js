@@ -13,7 +13,7 @@ class Order {
         return this.unitPrice * this.quantity;
     }
 
-    toString(){                               // ` -> Alt 96(testiera numerica destra)    new Date(aaaa/mm/gg) -> Mese va segnato -1
+    toString(){
         const card = 
         `Product: ${this.product}                       
 Prezzo Unitario: ${this.unitPrice.toFixed(2)} €
